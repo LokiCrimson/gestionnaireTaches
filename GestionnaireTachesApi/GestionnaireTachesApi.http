@@ -1,0 +1,6 @@
+@GestionnaireTachesApi_HostAddress = http://localhost:5199
+
+GET {{GestionnaireTachesApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
