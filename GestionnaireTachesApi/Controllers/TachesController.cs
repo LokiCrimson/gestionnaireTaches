@@ -1,41 +1,53 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using GestionnaireTachesApi.Models;
 using GestionnaireTachesApi.Data;
+using GestionnaireTachesApi.Models;
+using GestionnaireTachesApi.DTOs;
+using AutoMapper;
 
-[ApiController]
-[Route("api/taches")]
-public class TachesController : ControllerBase
+namespace GestionnaireTachesApi.Controllers
 {
-    private readonly TachesDbContext _contexte;
-
-    public TachesController(TachesDbContext contexte)
+    [ApiController]
+    [Route("api/taches")]
+    public class TachesController : ControllerBase
     {
-        _contexte = contexte;
-    }
+        private readonly TachesDbContext _contexte;
+        private readonly IMapper _mapper;
 
-    [HttpGet]
-    public async Task<ActionResult<IEnumerable<Tache>>> GetTaches()
-    {
-        return await _contexte.Taches.Include(t => t.Projet).ToListAsync();
-    }
+        public TachesController(TachesDbContext contexte, IMapper mapper)
+        {
+            _contexte = contexte;
+            _mapper = mapper;
+        }
 
-    [HttpPost]
-    public async Task<ActionResult<Tache>> CreerTache(Tache tache)
-    {
-        _contexte.Taches.Add(tache);
-        await _contexte.SaveChangesAsync();
-        return CreatedAtAction(nameof(GetTaches), new { id = tache.Id }, tache);
-    }
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<TacheDto>>> GetTaches()
+        {
+            var taches = await _contexte.Taches.Include(t => t.Projet).ToListAsync();
+            return Ok(_mapper.Map<IEnumerable<TacheDto>>(taches));
+        }
 
-    [HttpPut("{id}/terminer")]
-    public async Task<IActionResult> MarquerCommeTerminee(int id)
-    {
-        var tache = await _contexte.Taches.FindAsync(id);
-        if (tache == null) return NotFound();
+        [HttpPost]
+        public async Task<ActionResult<TacheDto>> CreerTache(TacheDto tacheDto)
+        {
+            var tache = _mapper.Map<Tache>(tacheDto);
+            _contexte.Taches.Add(tache);
+            await _contexte.SaveChangesAsync();
 
-        tache.EstTerminee = true;
-        await _contexte.SaveChangesAsync();
-        return NoContent();
+            return CreatedAtAction(nameof(GetTaches), new { id = tache.Id }, _mapper.Map<TacheDto>(tache));
+        }
+
+        [HttpPut("{id}/terminer")]
+        public async Task<IActionResult> MarquerCommeTerminee(int id)
+        {
+            var tache = await _contexte.Taches.FindAsync(id);
+            if (tache == null)
+                return NotFound();
+
+            tache.EstTerminee = true;
+            await _contexte.SaveChangesAsync();
+
+            return NoContent();
+        }
     }
 }

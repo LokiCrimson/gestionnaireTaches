@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\projet_csharp\\GestionnaireTachesApi\\GestionnaireTachesApi.csproj": {}
+    "D:\\github\\gestionnaireTaches\\GestionnaireTachesApi\\GestionnaireTachesApi.csproj": {}
   },
   "projects": {
-    "D:\\projet_csharp\\GestionnaireTachesApi\\GestionnaireTachesApi.csproj": {
+    "D:\\github\\gestionnaireTaches\\GestionnaireTachesApi\\GestionnaireTachesApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\projet_csharp\\GestionnaireTachesApi\\GestionnaireTachesApi.csproj",
+        "projectUniqueName": "D:\\github\\gestionnaireTaches\\GestionnaireTachesApi\\GestionnaireTachesApi.csproj",
         "projectName": "GestionnaireTachesApi",
-        "projectPath": "D:\\projet_csharp\\GestionnaireTachesApi\\GestionnaireTachesApi.csproj",
+        "projectPath": "D:\\github\\gestionnaireTaches\\GestionnaireTachesApi\\GestionnaireTachesApi.csproj",
         "packagesPath": "C:\\Users\\AJAVON\\.nuget\\packages\\",
-        "outputPath": "D:\\projet_csharp\\GestionnaireTachesApi\\obj\\",
+        "outputPath": "D:\\github\\gestionnaireTaches\\GestionnaireTachesApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -51,6 +51,10 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[9.0.5, )"

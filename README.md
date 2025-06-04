@@ -1,4 +1,3 @@
-
 # 🗂️ Gestionnaire de Tâches API
 
 Une API RESTful développée en **C# / ASP.NET Core** permettant de gérer des projets, leurs tâches associées et les dates d’échéance.
@@ -30,34 +29,35 @@ Une API RESTful développée en **C# / ASP.NET Core** permettant de gérer des p
 ### Étapes
 
 1. Cloner le dépôt :
+
    ```bash
    git clone https://github.com/ton-utilisateur/nom-du-depot.git
    cd nom-du-depot
    ```
-
 2. Restaurer les packages NuGet :
+
    ```bash
    dotnet restore
    ```
-
 3. Mettre à jour la chaîne de connexion dans `appsettings.json` :
+
    ```json
    "ConnectionStrings": {
      "DefaultConnection": "server=localhost;database=GestionnaireTaches;user=root;password=ton_mot_de_passe"
    }
    ```
-
 4. Appliquer les migrations :
+
    ```bash
    dotnet ef database update
    ```
-
 5. Lancer l’API :
+
    ```bash
    dotnet run
    ```
-
 6. Accéder à la documentation Swagger :
+
    ```
    http://localhost:5000/swagger
    ```
@@ -87,7 +87,7 @@ GestionnaireTachesApi/
 │   ├── Projet.cs
 │   └── Tache.cs
 ├── Data/
-│   └── TachesDbContext.cs
+|   └── TachesDbContext.cs
 ├── appsettings.json
 └── Program.cs
 ```
