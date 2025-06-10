@@ -187,7 +187,6 @@ D:\github\gestionnaireTaches\GestionnaireTachesApi\obj\Debug\net9.0\Gestionnaire
 D:\github\gestionnaireTaches\GestionnaireTachesApi\obj\Debug\net9.0\GestionnaireTachesApi.csproj.CoreCompileInputs.cache
 D:\github\gestionnaireTaches\GestionnaireTachesApi\obj\Debug\net9.0\GestionnaireTachesApi.MvcApplicationPartsAssemblyInfo.cs
 D:\github\gestionnaireTaches\GestionnaireTachesApi\obj\Debug\net9.0\GestionnaireTachesApi.MvcApplicationPartsAssemblyInfo.cache
-D:\github\gestionnaireTaches\GestionnaireTachesApi\obj\Debug\net9.0\GestionnaireTachesApi.sourcelink.json
 D:\github\gestionnaireTaches\GestionnaireTachesApi\obj\Debug\net9.0\scopedcss\bundle\GestionnaireTachesApi.styles.css
 D:\github\gestionnaireTaches\GestionnaireTachesApi\obj\Debug\net9.0\staticwebassets.build.json
 D:\github\gestionnaireTaches\GestionnaireTachesApi\obj\Debug\net9.0\staticwebassets.build.json.cache

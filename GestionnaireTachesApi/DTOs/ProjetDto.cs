@@ -6,6 +6,6 @@ namespace GestionnaireTachesApi.DTOs
     {
         public int Id { get; set; }
         public string Nom { get; set; }
-        public List<TacheDto> Taches { get; set; } = new();
+        public List<TacheDto>? Taches { get; set; }
     }
 }
